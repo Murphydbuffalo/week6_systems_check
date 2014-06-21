@@ -3,7 +3,8 @@
 <ul>
   <% @restaurant.reviews.each do |r| %>
     <li>
-      <h4><%= r.rating %></h4>
+      <p><%= r.body %></p>
+      <h4><%= " #{r.rating} out of 5 " %></h4>
     </li>
   <% end %>
 </ul>
