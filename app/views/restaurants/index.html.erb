@@ -8,3 +8,13 @@
     </li>
   <% end %>
 </ul>
+
+<footer>
+  <% if @page_number > 0 %>
+    <p><a href = '/?page=<%= @page_number - 1 %>'> Previous Page </a></p>
+  <% end %>
+
+  <% if @restaurants.count - ((@page_number + 1) * 10) >= 10 %>
+    <p><a href = '/?page=<%= @page_number + 1 %>'> Next Page </a></p>
+  <% end %>
+</footer>

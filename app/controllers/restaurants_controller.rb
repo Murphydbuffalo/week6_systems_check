@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
-  	@restaurants = Restaurant.order(:created_at).limit(10)
+    @page_number = params[:page].to_i || 0
+  	@restaurants = Restaurant.order(:created_at).limit(10).offset(@page_number * 10)
   end
 
   def show
