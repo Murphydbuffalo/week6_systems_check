@@ -1,1 +1,10 @@
 <h2>Good Eats</h2>
+
+<ul>
+  <% @restaurants.each do |r| %>
+    <li>
+      <h4><%= link_to "#{r.name}", restaurant_path(r) %></h4>
+      <h5><%= "#{r.city}, #{r.state}" %></h5>
+    </li>
+  <% end %>
+</ul>
