@@ -1,10 +1,12 @@
 class ReviewsController < ApplicationController
   def index
-  	@reviews = review.order(:created_at)
+  	#@restaurant = Restaurant.find(params[:id])
+    #@reviews = @resaturant.reviews.order(:created_at)
   end
 
   def new
-  	@review = review.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  	@review = Review.new
   end
 
   def create
